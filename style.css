@@ -1,0 +1,116 @@
+*, *::before, *::after {
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+}
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    --webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: unset;
+    -webkit-border-radius: 0;
+}
+:root {
+    --body-color: #fff;
+    --card-bg: #f0f2fa;
+    --heading-color: #8b97c6;
+    --text-color: #63687e;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+body {
+    background: var(--body-color);
+}
+.dark {
+    --body-color: #1f212e;
+    --card-bg: #252a41;
+    --heading-color: #8b97c6;
+    --text-color: #fff;
+    --border-color: 1px solid #8b97c6;
+}
+article {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 360px;
+    height: 400px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2rem;
+    position: relative;
+    box-shadow: 0 2px 8px var(--text-color);
+}
+.theme-toggler {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    border-radius: 50%;
+    padding: 1em;
+    font-size: 1.2em;
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.card h3 {
+    color: var(--heading-color);
+}
+.card p {
+    color: var(--text-color);
+}
+.card button {
+    margin: 2rem auto;
+    padding: .5em 2em;
+    background: var(--heading-color);
+    box-shadow: var(--box-shadow);
+    border: none;
+}
+
+/* Theme defaults */
+@media(prefers-color-scheme: dark) {
+    :root {
+        --body-color: #1f212e;
+        --card-bg: #252a41;
+        --heading-color: #8b97c6;
+        --text-color: #fff;
+        --border-color: 1px solid #8b97c6;
+    }
+}
+[color-scheme="dark"] {
+    --body-color: #1f212e;
+    --card-bg: #252a41;
+    --heading-color: #8b97c6;
+    --text-color: #fff;
+    --border-color: 1px solid #8b97c6;
+}
+@media(prefers-color-scheme: light) {
+    :root {
+        --body-color: #fff;
+        --card-bg: #f0f2fa;
+        --text-color: #63687e;
+        --box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    }
+}
+[color-scheme="light"] {
+    --body-color: #fff;
+    --card-bg: #f0f2fa;
+    --text-color: #63687e;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
